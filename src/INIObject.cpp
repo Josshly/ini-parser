@@ -2,7 +2,7 @@
 
 namespace INI {
 
-char *my_strdup(const char *src) {
+char *myStrdup(const char *src) {
     std::size_t len = strlen(src);
     char *s = new char[len + 1];
     memmove(s, src, len + 1);
@@ -26,8 +26,8 @@ void INIObject::add(const char *key, const char *val) {
             throw std::runtime_error("The keys or sections cannot be repeated.");
         }
     }
-    this->key.emplace_back(my_strdup(key));
-    this->val.emplace_back(val ? my_strdup(val) : nullptr);
+    this->key.emplace_back(myStrdup(key));
+    this->val.emplace_back(val ? myStrdup(val) : nullptr);
 }
 
 int INIObject::readLine(const std::string &line, const char *f, std::string &key,

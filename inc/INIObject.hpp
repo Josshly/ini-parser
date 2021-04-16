@@ -124,7 +124,7 @@ void toLower(std::string &str);
  * @param source String to copy.
  * @return Pointer to a copy of the string.
  */
-char *my_strdup(const char *source);
+char *myStrdup(const char *source);
 
 } // namespace INI
 #endif
