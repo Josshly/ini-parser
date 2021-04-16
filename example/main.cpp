@@ -1,9 +1,7 @@
 #include "../inc/INIObject.hpp"
-#include <algorithm>
 #include <exception>
 #include <fstream>
 #include <iostream>
-#include <map>
 #include <sstream>
 using namespace std;
 using namespace INI;
