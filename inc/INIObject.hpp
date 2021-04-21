@@ -31,7 +31,7 @@ public:
      * @return void.
      */
     template <typename stream,
-              typename U = std::enable_if_t<std::is_base_of<std::ostream, stream>::value ||
+              typename = std::enable_if_t<std::is_base_of<std::ostream, stream>::value ||
                                             std::is_same<std::ostream, stream>::value>>
     void print(stream &output_stream) {
         for (std::size_t i = 0; i < key.size(); i++) {
