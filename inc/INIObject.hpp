@@ -32,8 +32,8 @@ public:
      */
     template <typename stream,
               typename = std::enable_if_t<std::is_base_of<std::ostream, stream>::value ||
-                                            std::is_same<std::ostream, stream>::value>>
-    void print(stream &output_stream) {
+                                          std::is_same<std::ostream, stream>::value>>
+    void print(stream &output_stream) const noexcept {
         for (std::size_t i = 0; i < key.size(); i++) {
             if (val[i] == nullptr) {
                 output_stream << "[" << key[i] << "]:\n";
@@ -49,7 +49,7 @@ public:
      * @param f File where to print information.
      * @return void.
      */
-    void print(FILE *f);
+    void print(FILE *f) const noexcept;
 
 private:
     enum line_status {
@@ -124,7 +124,7 @@ void toLower(std::string &str);
  * @param src String to copy.
  * @return Pointer to a copy of the string.
  */
-char *myStrdup(const char *src);
+char *myStrdup(const char *src) noexcept;
 
 } // namespace INI
 #endif

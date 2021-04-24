@@ -2,7 +2,7 @@
 
 namespace INI {
 
-char *myStrdup(const char *src) {
+char *myStrdup(const char *src) noexcept {
     std::size_t len = strlen(src);
     char *s = new char[len + 1];
     memmove(s, src, len + 1);
@@ -169,7 +169,7 @@ void INIObject::parse(const char *filename) {
     input.close();
 }
 
-void INIObject::print(FILE *f) {
+void INIObject::print(FILE *f) const noexcept {
     for (std::size_t i = 0; i < key.size(); i++) {
         if (val[i] == nullptr) {
             fprintf(f, "[%s]:\n", key[i]);

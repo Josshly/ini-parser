@@ -9,10 +9,10 @@ using namespace INI;
 int main() {
     try {
         INIObject ini;
-        FILE *f = fopen("file.txt", "w");
-        ofstream ofile("ofile.txt");
+        FILE *f = fopen("results/file.txt", "w");
+        ofstream ofile("results/ofile.txt");
         ostringstream str_stream;
-        ini.parse("main.ini");
+        ini.parse("INI/main.ini");
         ini.print(cout);
         ini.print(ofile);
         ini.print(str_stream);
