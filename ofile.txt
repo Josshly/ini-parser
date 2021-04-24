@@ -1,7 +1,0 @@
-[network]:
-    [network:ip_address] = 10101000.11010100.11100010.11001100.
-    [network:mac_address] = 00:1B:44:11:3A:B7
-[hardware]:
-    [hardware:cpu] = AMDRyzenThreadripper3990X
-    [hardware:gpu] = None
-    [hardware:ssd] = samsung890evo512gb
