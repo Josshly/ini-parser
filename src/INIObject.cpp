@@ -1,4 +1,5 @@
 #include "../inc/INIObject.hpp"
+#include <cassert>
 
 namespace INI {
 
@@ -177,6 +178,25 @@ void INIObject::print(FILE *f) const noexcept {
             fprintf(f, "    [%s] = %s\n", key[i], val[i]);
         }
     }
+}
+
+std::size_t INIObject::size() const noexcept {
+    assert(key.size() == val.size());
+    return key.size();
+}
+
+const char *INIObject::getKey(std::size_t i) {
+    if (i >= key.size()) {
+        throw std::out_of_range("Invalid key position.");
+    }
+    return key[i];
+}
+
+const char *INIObject::getValue(std::size_t i) {
+    if (i >= val.size()) {
+        throw std::out_of_range("Invalid value position.");
+    }
+    return val[i];
 }
 
 } // namespace INI

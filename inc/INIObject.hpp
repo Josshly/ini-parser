@@ -51,6 +51,30 @@ public:
      */
     void print(FILE *f) const noexcept;
 
+    /**
+     * Returns the number of keys.
+     *
+     * @return number of keys.
+     */
+    std::size_t size() const noexcept;
+
+    /**
+     * Returns the specified key.
+     *
+     * @param i position of key.
+     * @return specified key.
+     */
+    const char *getKey(std::size_t i);
+
+    /**
+     * Returns the specified value.
+     * The value can be a nullptr.
+     *
+     * @param i position of value.
+     * @return specified value.
+     */
+    const char *getValue(std::size_t i);
+
 private:
     enum line_status {
         LINE_COMMENT,
