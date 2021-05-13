@@ -8,7 +8,14 @@ int main() {
     try {
         INIObject ini;
         ini.parse("INI/twisted.ini");
-        ini.print(cout);
+        for (std::size_t i = 0; i < ini.size(); i++) {
+            cout << ini.getKey(i) << " = ";
+            if (ini.getValue(i) == nullptr) {
+                cout << "empty" << endl;
+            } else {
+                cout << ini.getValue(i) << endl;
+            }
+        }
     } catch (exception &ex) {
         cout << ex.what() << endl;
     }
